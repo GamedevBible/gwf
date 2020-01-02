@@ -6,7 +6,8 @@
 
     <color name="appTextColorGreenLight">#008577</color>
     <color name="appTextColorGreenDark">#66ffa5</color>
-
+    <color name="buttonGrayBackgroundLight">#d7d7d7</color>
+    <color name="buttonGrayBackgroundDark">#5a5a5a</color>
     <color name="backgroundDark">#000000</color>
     <color name="backgroundLight">#f1f1f1</color>
 </resources>
