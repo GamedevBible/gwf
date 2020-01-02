@@ -1,105 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:orientation="vertical"
-    android:layout_gravity="center"
-    android:gravity="center"
-    android:id="@+id/mainLayout"
-    tools:context=".MainActivity">
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:layout_marginBottom="20dp"
-        android:id="@+id/crocodileLayout"
-        android:background="@drawable/scr_main_button_border">
+    android:paddingTop="?attr/actionBarSize"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        tools:context=".MainActivity">
         <FrameLayout
             android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/crocodileLayout"
+            android:background="@drawable/scr_main_button_border">
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/crocodileClickLayout"
+                android:background="?attr/selectableItemBackground">
+                <TextView
+                    android:layout_width="300dp"
+                    android:paddingEnd="50dp"
+                    android:paddingStart="50dp"
+                    android:textSize="24sp"
+                    android:singleLine="true"
+                    android:id="@+id/crocodileTextView"
+                    android:lines="1"
+                    android:textStyle="bold"
+                    android:ellipsize="end"
+                    style="@style/AppTheme"
+                    android:text="Crocodile"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_height="match_parent"/>
+            </FrameLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/aliasLayout"
+            android:background="@drawable/scr_main_button_border">
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/aliasClickLayout"
+                android:background="?attr/selectableItemBackground">
+                <TextView
+                    android:layout_width="300dp"
+                    android:paddingEnd="50dp"
+                    android:paddingStart="50dp"
+                    android:textSize="24sp"
+                    android:singleLine="true"
+                    android:lines="1"
+                    android:textStyle="bold"
+                    android:ellipsize="end"
+                    android:id="@+id/aliasTextView"
+                    style="@style/AppTheme"
+                    android:text="Alias"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_height="match_parent"/>
+            </FrameLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/boomLayout"
+            android:background="@drawable/scr_main_button_border">
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/boomClickLayout"
+                android:background="?attr/selectableItemBackground">
+                <TextView
+                    android:layout_width="300dp"
+                    android:paddingEnd="50dp"
+                    android:paddingStart="50dp"
+                    android:textSize="24sp"
+                    android:singleLine="true"
+                    android:lines="1"
+                    android:textStyle="bold"
+                    android:ellipsize="end"
+                    style="@style/AppTheme"
+                    android:id="@+id/boomTextView"
+                    android:text="Boom"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_height="match_parent"/>
+            </FrameLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/settingsLayout"
+        android:layout_margin="10dp"
+        android:background="@drawable/scr_main_button_border">
+        <FrameLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clickable="true"
             android:focusable="true"
-            android:id="@+id/crocodileClickLayout"
+            android:id="@+id/settingsClickLayout"
             android:background="?attr/selectableItemBackground">
-            <TextView
-                android:layout_width="300dp"
-                android:paddingEnd="50dp"
-                android:paddingStart="50dp"
-                android:textSize="24sp"
-                android:singleLine="true"
-                android:id="@+id/crocodileTextView"
-                android:lines="1"
-                android:textStyle="bold"
-                android:ellipsize="end"
-                style="@style/AppTheme"
-                android:text="Crocodile"
+            <ImageView
                 android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_height="match_parent"/>
+                android:tint="?attr/appColorPrimary"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/settings_outline"/>
         </FrameLayout>
     </FrameLayout>
-
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:layout_marginBottom="20dp"
-        android:id="@+id/aliasLayout"
-        android:background="@drawable/scr_main_button_border">
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:clickable="true"
-            android:focusable="true"
-            android:id="@+id/aliasClickLayout"
-            android:background="?attr/selectableItemBackground">
-            <TextView
-                android:layout_width="300dp"
-                android:paddingEnd="50dp"
-                android:paddingStart="50dp"
-                android:textSize="24sp"
-                android:singleLine="true"
-                android:lines="1"
-                android:textStyle="bold"
-                android:ellipsize="end"
-                android:id="@+id/aliasTextView"
-                style="@style/AppTheme"
-                android:text="Alias"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_height="match_parent"/>
-        </FrameLayout>
-    </FrameLayout>
-
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:layout_marginBottom="20dp"
-        android:id="@+id/boomLayout"
-        android:background="@drawable/scr_main_button_border">
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:clickable="true"
-            android:focusable="true"
-            android:id="@+id/boomClickLayout"
-            android:background="?attr/selectableItemBackground">
-            <TextView
-                android:layout_width="300dp"
-                android:paddingEnd="50dp"
-                android:paddingStart="50dp"
-                android:textSize="24sp"
-                android:singleLine="true"
-                android:lines="1"
-                android:textStyle="bold"
-                android:ellipsize="end"
-                style="@style/AppTheme"
-                android:id="@+id/boomTextView"
-                android:text="Boom"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_height="match_parent"/>
-        </FrameLayout>
-    </FrameLayout>
-
-</LinearLayout>
+</RelativeLayout>

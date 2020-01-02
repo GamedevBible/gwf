@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var mDayNightMode = AppCompatDelegate.getDefaultNightMode();
+        var mDayNightMode = AppCompatDelegate.getDefaultNightMode()
 
         aliasClickLayout.setOnClickListener {
             mDayNightMode = if (mDayNightMode == AppCompatDelegate.MODE_NIGHT_NO)
@@ -24,6 +24,17 @@ class MainActivity : AppCompatActivity() {
                 AppCompatDelegate.MODE_NIGHT_NO
             AppCompatDelegate.setDefaultNightMode(mDayNightMode)
             delegate.applyDayNight()
+        }
+
+        settingsClickLayout.setOnClickListener {
+            val settingsAnimX = ObjectAnimator.ofFloat(settingsLayout, View.TRANSLATION_X, 0f, ((-1 * this.resources.displayMetrics.widthPixels) / 2 + 100).toFloat()).apply { duration = 500 }
+            val settingsAnimY = ObjectAnimator.ofFloat(settingsLayout, View.TRANSLATION_Y, 0f, (this.resources.displayMetrics.heightPixels / 2 - 100).toFloat()).apply { duration = 500 }
+            val settingsAnimFade = ObjectAnimator.ofFloat(settingsLayout, View.ALPHA, 1f, 0f).apply { duration = 500 }
+            val settingsAnimScaleX = ObjectAnimator.ofFloat(settingsLayout, View.SCALE_X, 1f, 5f).apply { duration = 500 }
+            val settingsAnimScaleY = ObjectAnimator.ofFloat(settingsLayout, View.SCALE_Y, 1f, 5f).apply { duration = 500 }
+            val animSetSettings = AnimatorSet()
+            animSetSettings.playTogether(settingsAnimX, settingsAnimY, settingsAnimFade, settingsAnimScaleX, settingsAnimScaleY)
+            animSetSettings.start()
         }
     }
 
@@ -38,18 +49,24 @@ class MainActivity : AppCompatActivity() {
         boomLayout.visibility = View.INVISIBLE
         crocodileLayout.visibility = View.INVISIBLE
         aliasLayout.visibility = View.INVISIBLE
+        settingsLayout.visibility = View.INVISIBLE
 
-        val crocodileAnimY = ObjectAnimator.ofFloat(crocodileLayout, View.TRANSLATION_Y, -100f, 0f)
-        val crocodileAnimFade = ObjectAnimator.ofFloat(crocodileLayout, View.ALPHA, 0f, 1f)
-        crocodileAnimY.duration = 200
-        crocodileAnimFade.duration = 200
+        val settingsAnimY = ObjectAnimator.ofFloat(settingsLayout, View.TRANSLATION_Y, -100f, 0f).apply { duration = 200 }
+        val settingsAnimFade = ObjectAnimator.ofFloat(settingsLayout, View.ALPHA, 0f, 1f).apply { duration = 200 }
+        val animSetSettings = AnimatorSet()
+        animSetSettings.playTogether(settingsAnimY, settingsAnimFade)
+
+        val crocodileAnimY = ObjectAnimator.ofFloat(crocodileLayout, View.TRANSLATION_Y, -100f, 0f).apply { duration = 200 }
+        val crocodileAnimFade = ObjectAnimator.ofFloat(crocodileLayout, View.ALPHA, 0f, 1f).apply { duration = 200 }
         val animSetCrocodile = AnimatorSet()
         animSetCrocodile.playTogether(crocodileAnimY, crocodileAnimFade)
+        animSetCrocodile.doOnEnd {
+            animSetSettings.start()
+            settingsLayout.visibility = View.VISIBLE
+        }
 
-        val aliasAnimY = ObjectAnimator.ofFloat(aliasLayout, View.TRANSLATION_Y, -100f, 0f)
-        val aliasAnimFade = ObjectAnimator.ofFloat(aliasLayout, View.ALPHA, 0f, 1f)
-        aliasAnimY.duration = 200
-        aliasAnimFade.duration = 200
+        val aliasAnimY = ObjectAnimator.ofFloat(aliasLayout, View.TRANSLATION_Y, -100f, 0f).apply { duration = 200 }
+        val aliasAnimFade = ObjectAnimator.ofFloat(aliasLayout, View.ALPHA, 0f, 1f).apply { duration = 200 }
         val animSetAlias = AnimatorSet()
         animSetAlias.playTogether(aliasAnimY, aliasAnimFade)
         animSetAlias.doOnEnd {
@@ -57,10 +74,8 @@ class MainActivity : AppCompatActivity() {
             crocodileLayout.visibility = View.VISIBLE
         }
 
-        val boomAnimY = ObjectAnimator.ofFloat(boomLayout, View.TRANSLATION_Y, -100f, 0f)
-        val boomAnimFade = ObjectAnimator.ofFloat(boomLayout, View.ALPHA, 0f, 1f)
-        boomAnimY.duration = 200
-        boomAnimFade.duration = 200
+        val boomAnimY = ObjectAnimator.ofFloat(boomLayout, View.TRANSLATION_Y, -100f, 0f).apply { duration = 200 }
+        val boomAnimFade = ObjectAnimator.ofFloat(boomLayout, View.ALPHA, 0f, 1f).apply { duration = 200 }
         val animSetBoom = AnimatorSet()
         animSetBoom.playTogether(boomAnimY, boomAnimFade)
         animSetBoom.doOnEnd {
