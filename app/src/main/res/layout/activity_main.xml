@@ -12,12 +12,15 @@
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="80dp"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/crocodileLayout"
         android:background="@drawable/scr_main_button_border">
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:clickable="true"
             android:focusable="true"
+            android:id="@+id/crocodileClickLayout"
             android:background="?attr/selectableItemBackground">
             <TextView
                 android:layout_width="300dp"
@@ -25,7 +28,9 @@
                 android:paddingStart="50dp"
                 android:textSize="24sp"
                 android:singleLine="true"
+                android:id="@+id/crocodileTextView"
                 android:lines="1"
+                android:textStyle="bold"
                 android:ellipsize="end"
                 style="@style/AppTheme"
                 android:text="Crocodile"
@@ -35,26 +40,66 @@
         </FrameLayout>
     </FrameLayout>
 
-    <Button
+    <FrameLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="18"
-        android:text="Crocodile"
-        android:id="@+id/crocodileButton"
-        android:textColor="?attr/appColorPrimary"/>
-    <Button
+        android:layout_height="80dp"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/aliasLayout"
+        android:background="@drawable/scr_main_button_border">
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/aliasClickLayout"
+            android:background="?attr/selectableItemBackground">
+            <TextView
+                android:layout_width="300dp"
+                android:paddingEnd="50dp"
+                android:paddingStart="50dp"
+                android:textSize="24sp"
+                android:singleLine="true"
+                android:lines="1"
+                android:textStyle="bold"
+                android:ellipsize="end"
+                android:id="@+id/aliasTextView"
+                style="@style/AppTheme"
+                android:text="Alias"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_height="match_parent"/>
+        </FrameLayout>
+    </FrameLayout>
+
+    <FrameLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="18"
-        android:text="Alias"
-        android:id="@+id/aliasButton"
-        android:textColor="?attr/appColorPrimary"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="18"
-        android:text="Boom"
-        android:id="@+id/boomButton"
-        android:textColor="?attr/appColorPrimary"/>
+        android:layout_height="80dp"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/boomLayout"
+        android:background="@drawable/scr_main_button_border">
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/boomClickLayout"
+            android:background="?attr/selectableItemBackground">
+            <TextView
+                android:layout_width="300dp"
+                android:paddingEnd="50dp"
+                android:paddingStart="50dp"
+                android:textSize="24sp"
+                android:singleLine="true"
+                android:lines="1"
+                android:textStyle="bold"
+                android:ellipsize="end"
+                style="@style/AppTheme"
+                android:id="@+id/boomTextView"
+                android:text="Boom"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_height="match_parent"/>
+        </FrameLayout>
+    </FrameLayout>
 
 </LinearLayout>
