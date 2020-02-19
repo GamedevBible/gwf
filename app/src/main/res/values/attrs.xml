@@ -2,4 +2,5 @@
 <resources>
     <attr name="appColorPrimary" format="color" />
     <attr name="scrMainButtonGrayBackground" format="color" />
+    <attr name="scrSettingsButtonGraySeparator" format="color" />
 </resources>

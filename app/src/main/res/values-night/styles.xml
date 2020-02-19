@@ -12,6 +12,7 @@
         <item name="android:textColor">@color/appTextColorGreenDark</item>
         <item name="appColorPrimary">@color/appTextColorGreenDark</item>
         <item name="scrMainButtonGrayBackground">@color/buttonGrayBackgroundDark</item>
+        <item name="scrSettingsButtonGraySeparator">@color/buttonGraySeparatorDark</item>
     </style>
 
 </resources>
