@@ -6,29 +6,22 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.animation.doOnEnd
 import com.biblegamedev.gwf.R
 import com.biblegamedev.gwf.common.settings.SettingsActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
+@Suppress("ConstantConditionIf")
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var mDayNightMode = AppCompatDelegate.getDefaultNightMode()
+        initViews()
+    }
 
-        aliasClickLayout.setOnClickListener {
-            mDayNightMode = if (mDayNightMode == AppCompatDelegate.MODE_NIGHT_NO)
-                AppCompatDelegate.MODE_NIGHT_YES
-            else
-                AppCompatDelegate.MODE_NIGHT_NO
-            AppCompatDelegate.setDefaultNightMode(mDayNightMode)
-            delegate.applyDayNight()
-        }
-
+    private fun initViews() {
         settingsClickLayout.setOnClickListener {
             val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
@@ -38,7 +31,9 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        animateButtonsIn()
+        if (Config.buttonsAnimationEnabled) {
+            animateButtonsIn()
+        }
     }
 
     private fun animateButtonsIn() {
