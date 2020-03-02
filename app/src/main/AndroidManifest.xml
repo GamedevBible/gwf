@@ -17,7 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".common.SettingsActivity" />
+        <activity android:name=".common.settings.SettingsActivity" />
     </application>
 
 </manifest>

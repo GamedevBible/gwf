@@ -9,6 +9,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.animation.doOnEnd
 import com.biblegamedev.gwf.R
+import com.biblegamedev.gwf.common.settings.SettingsActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
