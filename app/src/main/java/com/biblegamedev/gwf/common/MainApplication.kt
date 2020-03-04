@@ -9,6 +9,8 @@ class MainApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         // Required initialization logic here!
+
+        initDI(applicationContext)
     }
 
     // Called by the system when the device configuration changes while your component is running.
