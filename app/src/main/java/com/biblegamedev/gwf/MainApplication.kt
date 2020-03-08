@@ -1,4 +1,4 @@
-package com.biblegamedev.gwf.common
+package com.biblegamedev.gwf
 
 import android.app.Application
 import android.content.res.Configuration

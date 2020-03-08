@@ -1,4 +1,4 @@
-package com.biblegamedev.gwf.common
+package com.biblegamedev.gwf.common.main
 
 import android.app.Application
 import com.biblegamedev.gwf.common.mvvm.BaseViewModel

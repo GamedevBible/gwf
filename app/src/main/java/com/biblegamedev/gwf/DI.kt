@@ -1,6 +1,7 @@
-package com.biblegamedev.gwf.common
+package com.biblegamedev.gwf
 
 import android.content.Context
+import com.biblegamedev.gwf.common.main.MainViewModel
 import com.biblegamedev.gwf.common.settings.SettingsViewModel
 import com.biblegamedev.gwf.crocodile.CrocodileGameService
 import com.biblegamedev.gwf.crocodile.game.CrocodileGameViewModel

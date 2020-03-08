@@ -1,7 +1,10 @@
 package com.biblegamedev.gwf.crocodile.game
 
-import androidx.fragment.app.DialogFragment
+import com.biblegamedev.gwf.common.mvvm.BaseDialogFragment
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class CrocodileGameFragment : DialogFragment() {
+class CrocodileGameFragment : BaseDialogFragment<CrocodileGameViewModel>() {
+
+    override val viewModel: CrocodileGameViewModel by viewModel()
 
 }
