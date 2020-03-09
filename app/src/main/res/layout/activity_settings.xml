@@ -33,7 +33,6 @@
                     android:id="@+id/dayNightModeTextView"
                     android:lines="1"
                     android:ellipsize="end"
-                    style="@style/AppTheme"
                     android:text="Day/Night mode"
                     android:gravity="center_vertical"
                     android:layout_height="match_parent"

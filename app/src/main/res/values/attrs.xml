@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <attr name="appColorPrimary" format="color" />
+    <attr name="scrBottomSheetBackground" format="color" />
     <attr name="scrMainButtonGrayBackground" format="color" />
     <attr name="scrSettingsButtonGraySeparator" format="color" />
 </resources>
